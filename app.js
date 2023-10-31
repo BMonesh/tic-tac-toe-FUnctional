@@ -22,7 +22,7 @@ boxes.forEach(box =>{
     box.onclick = handleClick;
 })
 
-var click = 0;
+var click = 1;
 
 function handleClick(e){
     var id_d = e.target.id;
@@ -41,13 +41,15 @@ function handleClick(e){
         oatemp.push(id_d-1);
         textTBI.innerHTML = "O";
         textTBI.style.color = "orange";
-        checkResult(winningComb, oatemp, "O");
+        checkResult(winningComb, oatemp, "O") ;
     }
-    else if(click == 9){
+    
+    if(click == 9){
         result.style.visibility = "visible";
         message.innerHTML = "It's a tie!";
     }
     click++;
+    
 }
 
 function checkResult(winningComb, attempts, player){
